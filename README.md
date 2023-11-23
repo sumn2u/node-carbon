@@ -10,6 +10,8 @@ Measuring the carbon footprint of node processes can be a valuable tool for busi
 
 It estimates the electricity consumption of hardware (CPU+RAM) and applies the carbon intensity of the region where the computing is done.
 
+![Carbon Emission Calculation](./images/carbon_emission.png)
+
 ## Installation and Usage
 
 ```bash
@@ -33,6 +35,16 @@ setTimeout(async () => {
   console.log(`Carbon consumption: ${carbon.carbonEmission} gCO2e/kWh`);
 }, 1000);
 ```
+
+| Metric                                   | Unit         |
+| ---------------------------------------- | ------------ |
+| CPU Usage                                | watts        |
+| Elapsed Time                             | seconds      |
+| Memory Usage (RSS Delta)                  | Mb           |
+| Memory Usage (Heap Total Delta)           | Mb           |
+| Memory Usage (Heap Used Delta)            | Mb           |
+| Carbon Emission                          | gCO2e/kWh    |
+
 
 ## Testing
 
