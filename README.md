@@ -10,7 +10,7 @@ Measuring the carbon footprint of node processes can be a valuable tool for busi
 
 It estimates the electricity consumption of hardware (CPU+RAM) and applies the carbon intensity of the region where the computing is done.
 
-![Carbon Emission Calculation](./images/carbon_emission.png)
+![Carbon Emission Calculation](https://raw.githubusercontent.com/sumn2u/node-carbon/main/images/carbon_emission.png)
 
 ## Installation and Usage
 

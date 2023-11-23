@@ -1,6 +1,6 @@
 {
   "name": "node-carbon",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "calculate carbon footprints of current node process",
   "main": "index.js",
