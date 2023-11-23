@@ -1,6 +1,6 @@
 {
   "name": "node-carbon",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "calculate carbon footprints of current node process",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "test": "mocha test/*.test.js"
   },
   "author": "Suman Kunwar",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.10",
     "chai-as-promised": "^7.1.1",
