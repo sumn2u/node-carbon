@@ -1,9 +1,14 @@
 {
   "name": "node-carbon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "calculate carbon footprints of current node process",
   "main": "index.js",
+  "keywords": [
+    "carbon footprints",
+    "energy consumption",
+    "memory usage"
+  ],
   "scripts": {
     "test": "mocha test/*.test.js"
   },
