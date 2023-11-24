@@ -1,4 +1,4 @@
-# 🌱 Node Carbon: Quantifying Your Digital Footprint 🌐
+# 🌱 Node Carbon: A Node Package for Measuring Carbon Footprints 🌐
 
 Ever pondered the environmental impact of your Node.js processes? Enter Node Carbon – your solution for calculating the carbon footprint of your current Node.js operations.
 
@@ -41,12 +41,14 @@ await nodeCarbon.start();
 setTimeout(async () => {
   // Stop carbon logging of current process
   const carbon = await nodeCarbon.stop();
-  console.log(`CPU usage: ${carbon.cpuUsageInfo.cpuUsage} watts`);
-  console.log(`Total time: ${carbon.elapsedTime} s`);
-  console.log(`RSS delta: ${carbon.memoryUsageInfo.rssDeltaMB} Mb`);
-  console.log(`Heap total delta: ${carbon.memoryUsageInfo.heapTotalDeltaMB} Mb`);
-  console.log(`Heap used delta: ${carbon.memoryUsageInfo.heapUsedDeltaMB} Mb`);
-  console.log(`Carbon consumption: ${carbon.carbonEmission} gCO2e/kWh`);
+  console.table({
+  'CPU Usage (watts)': carbon.cpuUsageInfo.cpuUsage,
+  'Total Time (s)': carbon.elapsedTime,
+  'RSS Delta (Mb)': carbon.memoryUsageInfo.rssDeltaMB,
+  'Heap Total Delta (Mb)': carbon.memoryUsageInfo.heapTotalDeltaMB,
+  'Heap Used Delta (Mb)': carbon.memoryUsageInfo.heapUsedDeltaMB,
+  'Carbon Consumption (gCO2e/kWh)': carbon.carbonEmission
+});
 }, 1000);
 ```
 

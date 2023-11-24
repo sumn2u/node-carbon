@@ -24,7 +24,7 @@ class CpuUsageMeasurement {
       const endTime = Date.now(); // Get the end time of the measurement
       const totalTimeInSeconds = (endTime - this.startTime) / 1000; // Convert total time to seconds
   
-      const cpuUsageDiff = endUsage.user - this.startUsage.user; // Calculate the difference in CPU usage
+      const cpuUsageDiff = endUsage.user - this.startUsage?.user; // Calculate the difference in CPU usage
       const cpuUsage = cpuUsageDiff > 0 ? cpuUsageDiff / totalTimeInSeconds : 0; // Calculate the average CPU usage
   
       return {
