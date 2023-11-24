@@ -23,10 +23,15 @@ Node.js is a popular JavaScript runtime environment that is widely used for web 
 
 # Statement of need
 
-The increasing popularity of Node.js [@nodejs_popularity] for web development and server-side applications has raised concerns about the environmental impact of computational processes [@szczesny_reduce_2021]. While existing tools like [CO2.js](https://developers.thegreenwebfoundation.org/co2js/overview/), [EcoPing](https://ecoping.earth), and [Website Carbon Calculator](https://www.websitecarbon.com/) provide valuable insights into the carbon footprint of web applications, they primarily focus on factors like grid energy mix, process execution time, system boundaries [@greenwood_why_2020] and data transfer, lacking a comprehensive approach that incorporates hardware power usage. This limitation can lead to inaccurate carbon footprint assessments and hinder developers' efforts to minimize their environmental impact.
+The increasing popularity of Node.js [@w3techs_usage_2022] for web development and server-side applications has raised concerns about the environmental impact of computational processes [@szczesny_reduce_2021]. While existing tools like [CO2.js](https://developers.thegreenwebfoundation.org/co2js/overview/), [EcoPing](https://ecoping.earth), and [Website Carbon Calculator](https://www.websitecarbon.com/) provide valuable insights into the carbon footprint of web applications, they primarily focus on factors like grid energy mix, process execution time, system boundaries [@greenwood_why_2020] and data transfer, lacking a comprehensive approach that incorporates hardware power usage. This limitation can lead to inaccurate carbon footprint assessments and hinder developers' efforts to minimize their environmental impact.
 
 
-To address this gap, there is a need for a more comprehensive tool like Node Carbon that directly measures hardware power consumption (RAM + CPU) and incorporates it into its carbon footprint calculations. This enhanced approach would provide developers with more accurate and actionable insights, enabling them to:
+To address this gap, there is a need for a more comprehensive tool like Node Carbon that directly measures hardware power consumption (RAM + CPU) and incorporates it into its carbon footprint calculations.
+
+![Carbon emission calculation process\label{fig:Carbon emission calculation process}](carbon_emission.png){width="100%"}
+
+Figure 1 describes the general process of calculating carbon emission. This enhanced approach would provide developers with more accurate and actionable insights, enabling them to:
+
 - Optimize their code to reduce energy consumption
 - Select more efficient hardware components
 - Choose hosting providers that utilize renewable energy sources
