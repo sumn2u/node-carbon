@@ -1,8 +1,11 @@
-
 import NodeCarbon from '../index.js';
 
 // Create an instance of the NodeCarbon class
 const nodeCarbon = new NodeCarbon();
+
+// Get energy information about the current network provider
+const energyInfo = await nodeCarbon.getEnergyInfo();
+console.log("Energy info", energyInfo);
 
 // Start measuring the carbon footprint of the current node process
 await nodeCarbon.start();
