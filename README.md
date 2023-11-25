@@ -3,6 +3,10 @@
 Ever pondered the environmental impact of your Node.js processes? Enter Node Carbon – your solution for calculating the carbon footprint of your current Node.js operations.
 
 [![status](https://joss.theoj.org/papers/2319047071d2f0e14401ca3ced73c0c0/status.svg)](https://joss.theoj.org/papers/2319047071d2f0e14401ca3ced73c0c0)
+<span class="badge-npmversion"><a href="https://npmjs.org/package/node-carbon" title="View this project on NPM"><img src="https://img.shields.io/npm/v/node-carbon.svg" alt="NPM version" /></a></span>
+<span class="badge-npmdownloads"><a href="https://npmjs.org/package/node-carbon" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/node-carbon.svg" alt="NPM downloads" /></a></span>
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Why Measure Your Carbon Footprint? 🌍
 
@@ -89,3 +93,4 @@ Experiments with different packages are done [here](https://github.com/sumn2u/no
 ## License
 
 Code released under the [MIT license](./LICENSE).
+
