@@ -73,6 +73,9 @@ setTimeout(async () => {
 ## Experiments
 Experiments with different packages are done [here](https://github.com/sumn2u/node-carbon/tree/experiments/experiments).
 
+## TODOs
+- Develop a more effective method for measuring the power consumption of RAM.
+
 ## Contributing
 
 1. Fork and clone it
