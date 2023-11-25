@@ -2,6 +2,7 @@
 import os from 'os';
 import * as cpuData from '../data/cpu_power.json' assert { type: 'json' };
 import * as globalEnergyData from '../data/global_energy_mix.json' assert { type: 'json' };
+import * as carbonIntensityData from '../data/carbon_intesity_per_source.json' assert {type: 'json'};
 import https from 'https';
 
 // Function to make an asynchronous HTTP request to get geographic information based on the IP address
@@ -85,10 +86,10 @@ export const getTotalCpuWattage = () => {
         if (tdpValue !== undefined) {
             return tdpValue;
         } else {
-            return "Not supported";
+            return "Misssing CPU information"; // ADD missing cpu information to cpu_power.json
         }
     } else {
-        return "No CPU information available";
+        return "No CPU information available"; // TODO Get global average CPU tdp
     }
 };
 
@@ -98,6 +99,6 @@ export const getCarbonUsage = (countryCode) => {
     if(geoInfo){
        return  geoInfo.carbon_intensity; 
     } else {
-        return 475; // Global carbon intensity
+        return carbonIntensityData.world_average; // Global carbon intensity
     }
 }
