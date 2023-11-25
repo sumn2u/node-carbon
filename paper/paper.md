@@ -46,9 +46,9 @@ Similarly to these, Node Carbon estimates the amount of carbon dioxide (CO2) pro
 
 # Overview
 
-Node Carbon calculates CO₂ emissions using Carbon Intensity (C) and Energy Consumed (E). C is the CO₂ emitted per kilowatt-hour of electricity consumed while E is the amount of electricity consumed by the computational infrastructure. Figure 1 describes the general process of calculating carbon emission.
+Node Carbon calculates CO₂ emissions using Carbon Intensity (C) and Energy Consumed (E). C is the CO₂ emitted per kilowatt-hour of electricity consumed while E is the amount of electricity consumed by the computational infrastructure. \autoref{fig:carbon_emission} describes the general process of calculating carbon emission.
 
-![Carbon emission calculation process\label{fig:Carbon emission calculation process}](carbon_emission.png){width="100%"}
+![Carbon emission calculation process\label{fig:carbon_emission}](carbon_emission.png){width="100%"}
 
 Carbon Intensity of electricity is based on emissions from energy sources used to generate it [@carbonbetter_carbon_2023]. Fossil fuels have high carbon intensities, while low-carbon fuels include solar, hydro, biomass, and geothermal power [@iea_global_energy_2020]. Node carbon calculates the carbon intensity of consumed electricity based on the mix of sources used. Providers like [Electricity Maps](https://www.electricitymaps.com/) and [WattTime](https://www.watttime.org/) can be used for real-time grid intensity data. Here, we rely on carbon intensity electricity data from [Our World in Data](https://ourworldindata.org/grapher/carbon-intensity-electricity) and process it. If data is missing, we use [code carbon data](https://mlco2.github.io/codecarbon/methodology.html#id5).
 
