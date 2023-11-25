@@ -6,6 +6,8 @@ Ever pondered the environmental impact of your Node.js processes? Enter Node Car
 <span class="badge-npmversion"><a href="https://npmjs.org/package/node-carbon" title="View this project on NPM"><img src="https://img.shields.io/npm/v/node-carbon.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/node-carbon" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/node-carbon.svg" alt="NPM downloads" /></a></span>
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Test Workflow](https://github.com/sumn2u/node-carbon/workflows/Test%20Workflow/badge.svg)](https://github.com/sumn2u/node-carbon/actions)
+
 
 
 ## Why Measure Your Carbon Footprint? 🌍
