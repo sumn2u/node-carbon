@@ -2,6 +2,8 @@
 
 Ever pondered the environmental impact of your Node.js processes? Enter Node Carbon – your solution for calculating the carbon footprint of your current Node.js operations.
 
+[![status](https://joss.theoj.org/papers/2319047071d2f0e14401ca3ced73c0c0/status.svg)](https://joss.theoj.org/papers/2319047071d2f0e14401ca3ced73c0c0)
+
 ## Why Measure Your Carbon Footprint? 🌍
 
 Understanding the carbon footprint of your Node.js processes is crucial for businesses, organizations, and individuals striving to minimize their environmental impact and enhance resource efficiency. As we collectively aim for a greener future, Node Carbon empowers you to make informed decisions and take proactive steps towards sustainability.
@@ -10,7 +12,7 @@ Understanding the carbon footprint of your Node.js processes is crucial for busi
 
 Node Carbon estimates the electricity consumption of your hardware (CPU+RAM) and then applies the carbon intensity specific to the region where the computing is taking place. This comprehensive approach ensures that you get an accurate and localized assessment of your digital carbon footprint.
 
-![Carbon Emission Calculation](https://raw.githubusercontent.com/sumn2u/node-carbon/main/images/carbon_emission.png)
+![Carbon Emission Calculation](https://raw.githubusercontent.com/sumn2u/node-carbon/main/paper/carbon_emission.png)
 
 
 ## Key Features  🔍
@@ -67,6 +69,9 @@ setTimeout(async () => {
 ```bash
  yarn test
 ```
+
+## Experiments
+Experiments with different packages are done [here](https://github.com/sumn2u/node-carbon/tree/experiments/experiments).
 
 ## Contributing
 
