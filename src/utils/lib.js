@@ -102,3 +102,36 @@ export const getCarbonUsage = (countryCode) => {
         return carbonIntensityData.world_average; // Global carbon intensity
     }
 }
+
+/**
+ * Function to retrieve energy usage information for a specific country
+ *
+ * @param {string} countryCode The country code for which to retrieve carbon usage information
+ * @returns {object|string} The country-specific energy usage information, or a message indicating that no information was found
+ */
+export const getEnergyUsageInfo = (countryCode) => {
+  // Retrieve the country-specific information from the global energy data
+  const geoInfo = globalEnergyData.default[countryCode];
+
+  // Check if country information exists
+  if (geoInfo) {
+    // Return the country information if it exists
+    return geoInfo;
+  } else {
+    // If no information is found, return a default message
+    return "Couldn't find information";
+  }
+};
+
+
+// Function to map an object's keys based on a provided mapping
+export const mapObjectWithColumns = (inputObject, columnNames) => {
+  // Create a new object by mapping old keys to new keys
+  const mappedObject = Object.fromEntries(
+    // Iterate over the entries of the columnNames mapping
+    Object.entries(columnNames).map(([newKey, oldKey]) => [newKey, inputObject[oldKey]])
+  );
+
+  // Return the new object with mapped keys
+  return mappedObject;
+};
