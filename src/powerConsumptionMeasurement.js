@@ -1,6 +1,7 @@
 import CpuUsageMeasurement from './cpuUsageMeasurement.js';
 import MemoryUsageMeasurement from './memoryUsageMeasurement.js';
 import GeoCarbonUsageMeasurement from './geoCarbonUsageMeasurement.js';
+import { mapObjectWithColumns } from './utils/lib.js';
 
 /**
  * Class to measure the power consumption of a device.
@@ -21,6 +22,8 @@ class PowerConsumptionMeasurement {
 
     // Store the geo-based power usage
     this.geoPowerUsage = 0;
+    // Store the carbon intensity information
+    this.carbonIntesityInfo = null;
   }
 
   /**
@@ -39,6 +42,39 @@ class PowerConsumptionMeasurement {
 
     // Start measuring memory usage
     this.memoryUsageMeasurement.start();
+  }
+  /**
+   * Asynchronously retrieves and stores the carbon intensity information for the current country
+   */
+  async getEnergyInfo() {
+
+    // Asynchronously retrieve the carbon usage information for the current country
+    const countryEnergyUsage = await this.geoCarbonUsageMeasurement.getCountryEnergyUsageInfo();
+
+    if(countryEnergyUsage) {
+      // Mapping of old column names to new ones
+      const columnNames = {
+        'country': 'country_name',
+        'carbon_intensity_electricity': 'carbon_intensity',
+        'biofuel_electricity': 'biofuel_TWh',
+        'coal_electricity': 'coal_TWh',
+        'fossil_electricity': 'fossil_TWh',
+        'gas_electricity': 'gas_TWh',
+        'hydro_electricity': 'hydroelectricity_TWh',
+        'low_carbon_electricity': 'low_carbon_TWh',
+        'nuclear_electricity': 'nuclear_TWh',
+        'oil_electricity': 'oil_TWh',
+        'other_renewable_electricity': 'other_renewable_TWh',
+        'other_renewable_exc_biofuel_electricity': 'other_renewable_exc_biofuel_TWh',
+        'per_capita_electricity': 'per_capita_Wh',
+        'renewables_electricity': 'renewables_TWh',
+        'solar_electricity': 'solar_TWh',
+        'wind_electricity': 'wind_TWh'
+      };
+
+      this.carbonIntesityInfo = mapObjectWithColumns(countryEnergyUsage, columnNames);
+      return this.carbonIntesityInfo;
+    }
   }
 
   /**
