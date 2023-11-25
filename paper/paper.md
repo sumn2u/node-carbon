@@ -50,10 +50,10 @@ Node Carbon calculates CO₂ emissions using Carbon Intensity (C) and Energy Con
 
 ![Carbon emission calculation process\label{fig:Carbon emission calculation process}](carbon_emission.png){width="100%"}
 
-Carbon Intensity of electricity is based on emissions from energy sources used to generate it [@carbonbetter_carbon_2023]. Fossil fuels have high carbon intensities, while low-carbon fuels include solar, hydro, biomass, and geothermal power. Node carbon calculates the carbon intensity of consumed electricity based on the mix of sources used. Providers like [Electricity Maps](https://www.electricitymaps.com/) and [WattTime](https://www.watttime.org/) can be used for real-time grid intensity data. Here, we rely on carbon intensity electricity data from [Our World in Data](https://ourworldindata.org/grapher/carbon-intensity-electricity) and process it. If data is missing, we use [code carbon data](https://mlco2.github.io/codecarbon/methodology.html#id5).
+Carbon Intensity of electricity is based on emissions from energy sources used to generate it [@carbonbetter_carbon_2023]. Fossil fuels have high carbon intensities, while low-carbon fuels include solar, hydro, biomass, and geothermal power [@iea_global_energy_2020]. Node carbon calculates the carbon intensity of consumed electricity based on the mix of sources used. Providers like [Electricity Maps](https://www.electricitymaps.com/) and [WattTime](https://www.watttime.org/) can be used for real-time grid intensity data. Here, we rely on carbon intensity electricity data from [Our World in Data](https://ourworldindata.org/grapher/carbon-intensity-electricity) and process it. If data is missing, we use [code carbon data](https://mlco2.github.io/codecarbon/methodology.html#id5).
 
 
-We track the power supply to the underlying hardware based on computational usage. To ensure security and stability, the power usage of RAM used here is 3 watts for an 8 GB ratio [@ram_power_usage_2019]. We measure CPU usage by correlating current usage with TDPs from the data source, then multiplying by the CPU usage. If a global constant is unavailable, a standard value is used.
+The power supply to the underlying hardware is tracked based on computational usage. To ensure security and stability, the power usage of RAM used here is 3 watts for an 8 GB ratio [@ram_power_usage_2019]. We measure CPU usage by correlating current usage with TDPs from the data source, then multiplying by the CPU usage.
 
 
 # References
