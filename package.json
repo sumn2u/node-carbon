@@ -15,11 +15,12 @@
   "author": "Suman Kunwar",
   "license": "MIT",
   "devDependencies": {
+    "@felipebutcher/node-os-info": "^0.0.6",
+    "@tgwf/co2": "^0.13.9",
     "chai": "^4.3.10",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.2.0",
-    "sinon": "^17.0.1",
-    "@tgwf/co2": "^0.13.9",
-    "node-carbon": "^0.0.4"
+    "node-carbon": "^0.0.4",
+    "sinon": "^17.0.1"
   }
 }
