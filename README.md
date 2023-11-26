@@ -74,6 +74,14 @@ setTimeout(async () => {
 | Memory Usage (Heap Used Delta)            | Mb           |
 | Carbon Emission                          | gCO2e/kWh    |
 
+## Functions
+
+| Name        | Description |
+| ------------------ | ----------- |
+| `getEnergyInfo()` | Gives information about the energy grid of the connected network and its composition. |
+| `start()`          | Starts logging the hardware energy consumption. |
+| `end()`            | Computes the carbon emission based on the computation power usage and regional carbon intensity. |
+
 
 ## Testing
 
