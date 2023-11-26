@@ -24,6 +24,8 @@ class PowerConsumptionMeasurement {
     this.geoPowerUsage = 0;
     // Store the carbon intensity information
     this.carbonIntesityInfo = null;
+    // Initialize member variables
+    this.timer = null;
   }
 
   /**
@@ -42,6 +44,44 @@ class PowerConsumptionMeasurement {
 
     // Start measuring memory usage
     this.memoryUsageMeasurement.start();
+  }
+
+   /**
+   * Starts measuring power consumption at regular intervals.
+   *
+   * @param {number} intervalDuration The duration of the interval in milliseconds.
+   */
+   async startMeasurementWithInterval(intervalDuration) {
+    // Validate the interval duration
+    if (typeof intervalDuration !== 'number' || intervalDuration <= 0) {
+      throw new Error('Invalid intervalDuration: must be a positive number');
+    }
+
+    // Start measuring power consumption initially
+    await this.start();
+
+    // Set up a timer to stop and report power consumption at regular intervals
+    this.timer = setInterval(async () => {
+      // Stop measuring power consumption and report the results
+      await this.stopAndReport();
+
+      // Restart power consumption measurements for the next interval
+      await this.start();
+    }, intervalDuration);
+  }
+
+  /**
+   * Stops measuring power consumption and reports the results.
+   */
+  async stopAndReport() {
+    // Stop measuring power consumption and gather the results
+    const powerConsumptionInfo = await this.stop();
+    // Log the power consumption information to the console
+    console.log('Power Consumption Report:');
+    console.log('CPU Usage:', powerConsumptionInfo.cpuUsageInfo);
+    console.log('Memory Usage:', powerConsumptionInfo.memoryUsageInfo);
+    console.log('Carbon Emission:', powerConsumptionInfo.carbonEmission);
+    console.log('Elapsed Time:', powerConsumptionInfo.elapsedTime);
   }
   /**
    * Asynchronously retrieves and stores the carbon intensity information for the current country
@@ -75,6 +115,15 @@ class PowerConsumptionMeasurement {
       this.carbonIntesityInfo = mapObjectWithColumns(countryEnergyUsage, columnNames);
       return this.carbonIntesityInfo;
     }
+  }
+
+  /**
+   * Stops the ongoing power consumption measurement and cleans up the timer.
+   */
+  stopPowerMeasurement() {
+    // Clear the timer to prevent further interval-based measurements
+    clearInterval(this.timer);
+    this.timer = null;
   }
 
   /**

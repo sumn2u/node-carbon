@@ -98,4 +98,29 @@ describe('PowerConsumptionMeasurement', () => {
     expect(energyUsageInfo.biofuel_electricity).to.equal(mockEnergyInfo.biofuel_electricity);
     expect(energyUsageInfo.coal_electricity).to.equal(mockEnergyInfo.coal_electricity);
   });
+
+  it('should start measuring power consumption and stop at the specified interval', async () => {
+    // Create an instance of PowerConsumptionMeasurement
+    const powerConsumptionMeasurement = new PowerConsumptionMeasurement();
+
+    // Create a mock function for the stopAndReport method
+    const stopAndReportStub = sinon.stub().resolves();
+    powerConsumptionMeasurement.stopAndReport = stopAndReportStub;
+
+    // Set a timeout to wait for the interval to complete (adjust as needed)
+    const waitTime = 1000; // 1 second
+    const intervalDuration = 600;
+
+    // Call the startMeasurementWithInterval method
+    await powerConsumptionMeasurement.startMeasurementWithInterval(intervalDuration);
+
+    // Wait for a sufficient time to allow the interval to execute
+    await new Promise(resolve => setTimeout(resolve, waitTime));
+
+    // Verify that the `stopAndReport` method was called
+    expect(stopAndReportStub.called).to.be.true
+
+    // Call the stopPowerMeasurement method to stop the test explicitly
+    await powerConsumptionMeasurement.stopPowerMeasurement();
+  })
 });

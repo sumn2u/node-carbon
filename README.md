@@ -81,6 +81,8 @@ setTimeout(async () => {
 | `getEnergyInfo()` | Gives information about the energy grid of the connected network and its composition. |
 | `start()`          | Starts logging the hardware energy consumption. |
 | `end()`            | Computes the carbon emission based on the computation power usage and regional carbon intensity. |
+| `startMeasurementWithInterval(milliseconds)`            | Measures carbon consumption in an interval (milliseconds). |
+| `stopPowerMeasurement()`            | Clear the timer interval set in `startMeasurementWithInterval()`. |
 
 
 ## Testing
