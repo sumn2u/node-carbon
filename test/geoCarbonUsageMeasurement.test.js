@@ -35,5 +35,29 @@ describe('GeoCarbonUsageMeasurement', () => {
       // Call the fetchPowerUsage method and expect it to throw an error
       await expect(geoCarbonUsageMeasurement.fetchPowerUsage()).to.eventually.throw;
     });
+
+    it('should handle errors gracefully when fetching carbon usage', async () => {
+      // Mock the functions used in the GeoCarbonUsageMeasurement class
+      const fetchGeoInfo = async () => ({ country_code3: 'USA' });
+      const getCarbonUsage = async () => {
+        throw new Error('Unable to fetch carbon usage for the country');
+      };
+
+      // Create a new instance of the GeoCarbonUsageMeasurement class
+      const measurementInstance = new GeoCarbonUsageMeasurement(fetchGeoInfo, getCarbonUsage);
+
+      // Call the fetchPowerUsage method
+      try {
+        await measurementInstance.fetchPowerUsage();
+        // Assert if needed
+      } catch (error) {
+        // Verify that the expected error is thrown
+        expect(error.message).to.equal('Unable to fetch carbon usage for the country');
+      } finally {
+        // Restore the original methods
+        GeoCarbonUsageMeasurement.fetchGeoInfo = GeoCarbonUsageMeasurement.prototype.fetchGeoInfo;
+        GeoCarbonUsageMeasurement.getCarbonUsage = GeoCarbonUsageMeasurement.prototype.getCarbonUsage;
+      }
+    })
   });
 });

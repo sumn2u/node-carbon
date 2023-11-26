@@ -43,6 +43,11 @@ yarn add node-carbon --dev # or yarn
 
 ```js
 const nodeCarbon = new NodeCarbon();
+
+// Get energy information about the current network provider
+const energyInfo = await nodeCarbon.getEnergyInfo();
+console.log("Energy info", energyInfo);
+
 // start logging energy usage
 await nodeCarbon.start();
 
