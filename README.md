@@ -94,6 +94,9 @@ setTimeout(async () => {
 ## Experiments
 Experiments with different packages are done [here](https://github.com/sumn2u/node-carbon/tree/experiments/experiments).
 
+## Support
+This package supports Node.js versions between `>= 16.0.0` and `<= 21.0.0`. Here's an experimental setup with [various version](https://github.com/sumn2u/node-carbon/actions/runs/7060937460/job/19221532726).
+
 ## TODOs
 - Develop a more effective method for measuring the power consumption of RAM.
 
