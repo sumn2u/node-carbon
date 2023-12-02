@@ -21,6 +21,7 @@
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.2.0",
     "node-carbon": "^0.0.4",
+    "perf_hooks": "^0.0.1",
     "sinon": "^17.0.1"
   }
 }
