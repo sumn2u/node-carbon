@@ -90,12 +90,14 @@ setTimeout(async () => {
 ```bash
  yarn test
 
- npx 0x example.js -o server.flamegraph.html
 ```
 
 ## Experiments
 Experiments with different packages are done [here](https://github.com/sumn2u/node-carbon/tree/experiments/experiments).
 
+```bash
+npx 0x example.js -o server.flamegraph.html # calculating flamegraph
+```
 ## TODOs
 - Develop a more effective method for measuring the power consumption of RAM.
 
