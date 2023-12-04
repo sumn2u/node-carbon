@@ -89,6 +89,8 @@ setTimeout(async () => {
 
 ```bash
  yarn test
+
+ npx 0x example.js -o server.flamegraph.html
 ```
 
 ## Experiments
