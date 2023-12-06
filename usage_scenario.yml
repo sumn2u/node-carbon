@@ -19,6 +19,7 @@ services:
     ports:
       - 9001:8080
     setup-commands:
+      - whoami
 
 flow:
   - name: Load 1
