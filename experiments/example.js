@@ -13,7 +13,6 @@ const server = net.createServer((socket) => {
   socket.on('end', () => {
     console.log('Data transfer complete');
     socket.end();
-    server.close(); // Close the server when data transfer is complete
   });
 });
 
