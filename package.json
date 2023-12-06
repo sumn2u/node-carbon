@@ -10,7 +10,8 @@
     "memory usage"
   ],
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "mocha test/*.test.js",
+    "measure": "node experiments/example.js"
   },
   "author": "Suman Kunwar",
   "license": "MIT",
