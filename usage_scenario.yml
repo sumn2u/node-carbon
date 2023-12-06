@@ -12,14 +12,13 @@ services:
       - 9000:8080
     setup-commands:
       - whoami
-      - npm i
+
   High_load_Container:
     image: node:20-alpine
     # working_dir: /usr/src/app
     ports:
       - 9001:8080
     setup-commands:
-      - npm i
 
 flow:
   - name: Load 1
