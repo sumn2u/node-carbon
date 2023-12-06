@@ -12,35 +12,3 @@ services:
 
 volumes:
   node_modules:
-
-# services:
-#   Small_load_Container:
-#     image: node:20-alpine
-#     # working_dir: /usr/src/app
-#     ports:
-#       - 9000:8080
-#     setup-commands:
-#       - whoami
-
-#   High_load_Container:
-#     image: node:20-alpine
-#     # working_dir: /usr/src/app
-#     ports:
-#       - 9001:8080
-#     setup-commands:
-#       - whoami
-
-# flow:
-#   - name: Load 1
-#     container: Small_load_Container
-#     commands:
-#       - type: console
-#         command: node experiments/example.js -n 1
-#         detach: true
-#         note: Running Example Code with 1 detached
-#   - name: Load 100
-#     container: High_load_Container
-#     commands:
-#       - type: console
-#         command: node experiments/example.js -n 100
-#         note: Running Example Code with 100 detached

@@ -1,0 +1,26 @@
+---
+name: Green Coding Metrics
+author: Suman Kunwar
+description: Scenario to test file right usage.
+
+compose-file: !include compose.yml
+
+services:
+  app:
+    log-stdout: True
+    read-sci-stdout: True
+
+flow:
+  - name: Load 1
+    container: app
+    commands:
+      - type: console
+        command: node experiments/example.js -n 1
+        detach: true
+        note: Running Example Code with 1 detached
+  - name: Load 100
+    container: app
+    commands:
+      - type: console
+        command: node experiments/example.js -n 100
+        note: Running Example Code with 100 detached
