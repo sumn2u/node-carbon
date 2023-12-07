@@ -1,6 +1,6 @@
 import net from 'net';
 
-const port = 8080; // Choose an available port
+const port = process.env.PORT || 8080; // Choose an available port
 const dataSize = 3 * 1024 * 1024; // 3MB in bytes
 const data = Buffer.alloc(dataSize, '0'); // Allocate a buffer for the data
 
